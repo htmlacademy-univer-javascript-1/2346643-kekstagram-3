@@ -7,13 +7,13 @@ function randInt(min,max) {
   return Math.floor(Math.random()*(max - min + 1) + min);
 }
 
-function stringLengthChecker(string, maxLength) {
+function stringLengthChecker(string, maxLength) {  // eslint-disable-line no-unused-vars
   const length = string.length;
   return length <= maxLength;
 }
 
 
-function photosDataGenerator(n) {
+function photosDataGenerator(n) {  // eslint-disable-line no-unused-vars
   const photosData = [];
   let dataObj;
   for (let i = 0; i < n; i++) {
