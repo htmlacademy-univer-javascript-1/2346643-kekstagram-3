@@ -13,3 +13,18 @@ function stringLengthChecker(string, maxLength) {
 }
 
 
+function photosDataGenerator(n) {
+  const photosData = [];
+  let dataObj;
+  for (let i = 0; i < n; i++) {
+    dataObj = {
+      id: i + 1,
+      url: `photos/${i + 1}`,
+      description: `My cool photo number ${i + 1}`,
+      likes: randInt(15, 200),
+      comments: randInt(0, 200)
+    };
+    photosData.push(dataObj);
+  }
+  return photosData;
+}
