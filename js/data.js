@@ -1,5 +1,6 @@
 import {randInt} from './util.js';
 
+
 export function photosDataGenerator(n) {  // eslint-disable-line no-unused-vars
   const photosData = [];
   let dataObj;
