@@ -1,8 +1,9 @@
-const formElement = document.querySelector('.img-upload');
+export function validate(formElement){
+  new Pristine(formElement);
+  formElement.addEventListener('submit', (evt) => {
+    if (!Pristine.validate()) {
+      evt.preventDefault();
+    }
+  });
+}
 
-new Pristine(formElement);
-
-formElement.addEventListener('submit', (evt) => {
-  evt.preventDefault();
-  Pristine.validate();
-});

@@ -1,23 +1,41 @@
-const userPhotoElement = document.querySelector('.img-upload__overlay');
-const formElement = document.querySelector('.img-upload');
-const cancelButtonElement = document.querySelector('.img-upload__cancel');
+import {validate} from './validation.js';
 
-function showEditWindow() {
+const userPhotoElement = document.querySelector('.img-upload__overlay');
+const fileUploadElement = document.querySelector('#upload-file');
+const hashtagElement = document.querySelector('.text__hashtags');
+const commentElement = document.querySelector('.text__description');
+const cancelButtonElement = document.querySelector('.img-upload__cancel');
+const formElement = document.querySelector('.img-upload');
+
+
+function openEditWindow() {
   userPhotoElement.classList.remove('hidden');
   userPhotoElement.classList.add('modal-open');
+  document.addEventListener('keydown', onEscapeKeydown);
 }
 
-formElement.addEventListener('change', showEditWindow);
+function isEscapeKey(evt) {
+  return ( evt.key === 'Escape' );
+}
 
-function closeForm() {
-  formElement.classList.remove('novalidate');
+function onEscapeKeydown(evt) {
+  if (isEscapeKey(evt)) {
+    evt.preventDefault();
+    closeEditWindow(); }
+}
+
+function closeEditWindow() {
   userPhotoElement.classList.add('hidden');
   userPhotoElement.classList.remove('modal-open');
+  document.removeEventListener('keydown', onEscapeKeydown);
+  fileUploadElement.value = '';
+  hashtagElement.value = '';
+  commentElement.value = '';
 }
 
-formElement.addEventListener('submit', closeForm);
-cancelButtonElement.addEventListener('click', closeForm);
 
-document.addEventListener('keydown', (evt) => {
-  if ( evt.key === 'Escape' ) { closeForm(); }
-});
+export function createForm() {
+  fileUploadElement.addEventListener('change', openEditWindow);
+  cancelButtonElement.addEventListener('click', closeEditWindow);
+  validate(formElement);
+}
