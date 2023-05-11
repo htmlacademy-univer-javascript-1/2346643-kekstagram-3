@@ -26,3 +26,8 @@ export function enableScaleChanging() {
   );
 }
 
+export function disableScaleChanging() {
+  scaleControlValueElement.value = '100%';
+  imageElement.style = 'transform: scale(1)';
+}
+

@@ -12,9 +12,9 @@
 
 
 
+
 <body>
   <main>
-
     <!-- Фильтрация изображений от других пользователей -->
     <section class="img-filters  img-filters--inactive  container">
       <h2 class="img-filters__title  visually-hidden">Фильтр фотографий</h2>
@@ -35,6 +35,7 @@
           <h2 class="img-upload__title  visually-hidden">Загрузка фотографии</h2>
           <form class="img-upload__form" action = "https://27.javascript.pages.academy/kekstagram-simple"
                 id="upload-select-image" method="post" enctype="multipart/form-data" autocomplete="off">
+
 
             <!-- Изначальное состояние поля для загрузки изображения -->
             <fieldset class="img-upload__start">
@@ -134,6 +135,7 @@
             </div>
           </form>
         </div>
+
       </section>
 
       <!-- Здесь будут изображения других пользователей -->
@@ -187,6 +189,13 @@
       </div>
     </section>
   </main>
+
+  <div id ="blur" class="blur hidden" >
+    <div id = "error-window"  >
+      Ошибка загрузки данных!<br>
+      <button type="button" id="window-close" class = "close" >Перезагрузить страницу</button>
+    </div>
+  </div>
 
   <footer class="page-footer  container">
     <div class="page-footer__wrapper">
@@ -243,6 +252,8 @@
   <script type = "module" src="js/validation.js"></script>
   <script type = "module" src="js/scale.js"></script>
   <script type = "module" src="js/effects.js"></script>
+  <script type = "module" src="js/server.js"></script>
+  <script type = "module" src="js/picsRender.js"></script>
 
 
 </body>

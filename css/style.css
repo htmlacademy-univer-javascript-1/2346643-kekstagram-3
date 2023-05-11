@@ -1408,3 +1408,46 @@ main {
 .hidden {
   display: none;
 }
+#blur {
+  background: rgba(102, 102, 102, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#error-window {
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  padding: 12px;
+  border: 5px solid #CC0000FF;
+  border-radius: 10px;
+  color: #3C3614FF;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: #fff;
+}
+#blur:target {display: block;}
+.close {
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  display: inline-block;
+  border: 3px solid #cc0000;
+  border-radius: 5px;
+  color: #3C3614FF;
+  padding: 0 5px;
+  margin: 10px;
+  text-decoration: none;
+  background: #ffffff;
+  cursor:pointer;
+}
+.close:hover {background: #e6e6ff;}
