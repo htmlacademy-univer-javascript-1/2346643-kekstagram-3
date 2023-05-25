@@ -1,3 +1,5 @@
+import {createLoader} from './server.js';
+
 const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
 const pictureListElement = document.querySelector('.pictures');
 
@@ -16,4 +18,4 @@ export function picsRender(photosData) {
   document.querySelector('.pictures').appendChild(pictureFragment);
 }
 
-
+export const loadPics = createLoader(picsRender);
